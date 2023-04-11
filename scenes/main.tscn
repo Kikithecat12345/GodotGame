@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1kk4ciphe3ji"]
+
+[ext_resource type="Material" uid="uid://dmx2y46fqnlar" path="res://materials/grayTile.tres" id="1_3kx0v"]
+[ext_resource type="PackedScene" uid="uid://b7f7nt2x8wqmq" path="res://scenes/player.tscn" id="2_8am6f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vrqp3"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxpk1"]
+material = ExtResource("1_3kx0v")
+size = Vector3(100, 2, 100)
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="World"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ground"]
+shape = SubResource("BoxShape3D_vrqp3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ground"]
+mesh = SubResource("BoxMesh_kxpk1")
+
+[node name="Sun" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_8am6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79293, 0)

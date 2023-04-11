@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dmx2y46fqnlar"]
+
+[ext_resource type="Texture2D" uid="uid://b0ame830q2fao" path="res://materials/textures/grayTile.png" id="1_s1rs4"]
+
+[resource]
+albedo_texture = ExtResource("1_s1rs4")
+uv1_triplanar = true
+uv1_world_triplanar = true
