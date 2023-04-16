@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cnlyn0yxmedv8"]
+
+[ext_resource type="Texture2D" uid="uid://cnmdh7lnp32qj" path="res://materials/textures/orangeTile.png" id="1_r8nx0"]
+
+[resource]
+albedo_texture = ExtResource("1_r8nx0")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
