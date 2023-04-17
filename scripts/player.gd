@@ -113,12 +113,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		# rotate camera
 		pivot.rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENSITIVITY))
 		camera.rotate_x(deg_to_rad(-event.relative.y * MOUSE_SENSITIVITY * -1))
 	if event is InputEventKey: # if escape is pressed, toggle mouse mode
-		if event.key_label == KEY_ESCAPE:
+		if Input.is_action_just_pressed("ui_cancel"):
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			else:
