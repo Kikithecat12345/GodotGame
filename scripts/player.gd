@@ -43,6 +43,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	floor_snap_length = STEP_DISTANCE
 	floor_max_angle = deg_to_rad(MAX_SLOPE_ANGLE)
+	print("Version: ", ProjectSettings.get_setting("version"))
 
 func get_wishdir():
 	var dir = Vector2.ZERO
